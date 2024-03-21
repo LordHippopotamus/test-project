@@ -163,7 +163,7 @@ const deleteTodo = (id) => {
           :items="todos"
           :itemsPerPage="8"
           :search="search"
-          :sortBy="{ key: sortKey }"
+          :sortBy="[{ key: sortKey }]"
         >
           <template v-slot:header>
             <Toolbar
