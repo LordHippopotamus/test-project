@@ -47,9 +47,12 @@ const aspectRules = [(value) => !!value || "Life Aspect is Required"];
 </script>
 
 <template>
-  <v-btn @click="dialog = true" size="large" prepend-icon="mdi-plus">
-    Create Todo
-  </v-btn>
+  <v-btn
+    @click="dialog = true"
+    icon="mdi-plus"
+    variant="tonal"
+    color="primary"
+  />
   <v-dialog v-model="dialog" max-width="400">
     <v-card title="Create Todo">
       <v-form @submit.prevent="handleSubmit" v-model="valid">
