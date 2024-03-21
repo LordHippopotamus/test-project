@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch } from "vue";
+import { v4 as uuidv4 } from "uuid";
 import { lifeAspects } from "@/utils";
 
 const props = defineProps({
@@ -18,6 +19,7 @@ const lifeAspect = ref("");
 const handleSubmit = async () => {
   if (!valid.value) return;
   props.addTodo({
+    id: uuidv4(),
     title: title.value,
     deadline: new Date(deadline.value),
     lifeAspect: lifeAspect.value,

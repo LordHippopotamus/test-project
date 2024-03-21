@@ -1,8 +1,9 @@
 <template>
   <v-app>
     <v-main>
-      <v-container>
+      <v-container class="d-flex flex-column ga-3" style="max-width: 500px">
         <CreateTodo :addTodo="addTodo" />
+        <TodoList :todos="todos" />
       </v-container>
     </v-main>
   </v-app>
@@ -10,9 +11,11 @@
 
 <script setup>
 import { ref } from "vue";
+import { v4 as uuidv4 } from "uuid";
 
 const todos = ref([
   {
+    id: uuidv4(),
     title: "qwerty",
     deadline: new Date(),
     lifeAspect: "health",

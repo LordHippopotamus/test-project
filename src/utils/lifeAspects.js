@@ -9,3 +9,6 @@ export const lifeAspects = [
   },
   { value: "health", title: "Health", icon: "mdi-heart" },
 ];
+
+export const getIconByValue = (value) =>
+  lifeAspects.find((el) => el.value === value).icon;
