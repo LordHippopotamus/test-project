@@ -31,8 +31,16 @@ const deleteTodo = (id) => {
               :addTodo="addTodo"
             />
           </template>
+          <template v-slot:no-data>
+            <v-toolbar class="px-2">
+              <div class="mx-auto">
+                <span>Everything is Done! </span>
+                <v-icon icon="mdi-emoticon-cool" />
+              </div>
+            </v-toolbar>
+          </template>
           <template v-slot:default="{ items }">
-            <v-list v-if="items.length">
+            <v-list>
               <TodoListItem
                 v-for="item in items"
                 :key="item.raw.id"
@@ -40,7 +48,6 @@ const deleteTodo = (id) => {
                 @delete="deleteTodo(item.raw.id)"
               />
             </v-list>
-            <div v-if="!items.length">All is Done!</div>
           </template>
           <template v-slot:footer="{ page, pageCount, prevPage, nextPage }">
             <v-toolbar class="px-2">
