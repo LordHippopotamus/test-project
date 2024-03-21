@@ -16,9 +16,7 @@ const dialog = ref(null);
       v-text="todo.title"
       :class="todo.completed && 'text-decoration-line-through'"
     />
-    <v-list-item-subtitle
-      v-text="'Deadline: ' + todo.deadline.toLocaleString()"
-    />
+    <v-list-item-subtitle v-text="todo.deadline.toLocaleString()" />
     <template v-slot:append>
       <v-list-item-action>
         <v-checkbox-btn v-model="todo.completed" />
