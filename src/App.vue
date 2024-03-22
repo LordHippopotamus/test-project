@@ -33,9 +33,10 @@ const deleteTodo = (id) => {
           </template>
           <template v-slot:no-data>
             <v-toolbar class="px-2">
-              <div class="mx-auto">
-                <span>Everything is Done! </span>
+              <div class="mx-auto text-center">
+                <span class="text-body-1">Everything is Done! </span>
                 <v-icon icon="mdi-emoticon-cool" />
+                <p class="text-body-2">Or just clear the search field</p>
               </div>
             </v-toolbar>
           </template>
